@@ -1,0 +1,36 @@
+<ion-view title="STEP 3 OF 3" class="popoverr">
+
+	<ion-nav-buttons side="right">
+    <a href="javascript:;" ui-sref="app.rethink-analyze-help"><button class="button button-clear icon ion-ios7-help-empty"></button></a>
+  </ion-nav-buttons>
+  	<div class="back"></div> 
+	<ion-content class="rethink step3">
+
+
+		<h1>
+		  Record a more realistic way of viewing things.
+		</h1>
+		<p>EXAMPLES<br>What are the facts? What's your evidence? Stick to logic over feelings.</p>
+		<p>What would you say to a friend in the same situation?</p>
+		<p>What alternative view could you take?</p>
+		<div class="bar bar-footer">
+		<div class="record-button-wrapper">
+			<div ng-show="!recording" class="{{!canRecord() ? 'disabled' : ''}}">
+				<a ng-click="recordAudio();" class="record"></a>
+			</div>
+
+			<div ng-show="recording">
+				<a ng-click="stopRecording()" class="pause"></a>
+			</div>
+
+			<div ng-show="finishedRecording" ng-click="resetRecording()" class="reset-btn">RESET</div>
+			<div ng-show="finishedRecording" ng-click="nextStep()" class="next-btn">DONE</div>
+			<div class="hint {{!canRecord() ? 'warn' : ''}}" ng-show="recording || finishedRecording">{{getElapsedTime()}}</div>
+			<div class="hint" ng-show="!recording && !finishedRecording">When you&#8217;re ready, press record.</div>
+		</div>
+	</div>
+
+
+
+	</ion-content>
+</ion-view>

@@ -1,0 +1,24 @@
+<ion-view title="" hide-nav-bar="true" class="popoverr slideshow">
+  <ion-content>
+
+    <go-back ng-show="!intro"></go-back>
+
+    <ion-slide-box on-slide-changed="slideHasChanged($index)" show-pager="false">
+
+      <ion-slide class="rethink-slide">
+        <div class="box box1">
+          <div class="slide-image"></div>
+          <h1>Hear Your Thoughts</h1>
+          <p>
+            Thoughts affect how you feel and ultimately, your perspective on the world. The more things you
+            see as threatening, the more anxiety you feel. It&#8217;s that simple.<br><br>
+            THOUGHTS helps you to understand your thinking patterns, challenge the thoughts contributing to your anxiety, and develop more balanced perspectives.
+            <button class="button-start" ng-click="confirm()" ng-show="intro">OK, GOT IT.</button>
+          </p>
+        </div>
+      </ion-slide>
+
+
+    </ion-slide-box>
+  </ion-content>
+</ion-view>

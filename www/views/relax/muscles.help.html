@@ -1,0 +1,21 @@
+<ion-view title="" hide-nav-bar="true" class="popoverr slideshow">
+  <ion-content>
+
+    <go-back ng-show="!intro"></go-back>
+
+    <ion-slide-box on-slide-changed="slideHasChanged($index)" show-pager="false">
+
+      <ion-slide class="muscle-slide">
+        <div class="box1 box">
+          <div class="slide-image"></div>
+          <h1>Progressive Muscle Relaxation</h1>
+          <p>This activity teaches you to relax your muscles via a two step process. First, tense a specific muscle group for a few moments and note the tension. Then, release this muscle group and notice the difference.<br><br>
+          You&#8217;ll work through ten different muscle groups. Each group is followed by a single breathing cycle.</p>
+
+          <div ng-click="confirm()" class="button-start" ng-show="intro">OK, GOT IT.</div>
+        </div>
+      </ion-slide>
+
+    </ion-slide-box>
+  </ion-content>
+</ion-view>

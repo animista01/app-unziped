@@ -1,0 +1,40 @@
+<ion-view title="" hide-nav-bar="true" class="popoverr slideshow">
+  <ion-content>
+
+    <go-back ng-show="!intro"></go-back>
+
+    <ion-slide-box on-slide-changed="slideHasChanged($index)">
+
+      <ion-slide class="breathe-slide">
+        <div class="box1 box">
+          <div class="slide-image"></div>
+          <h1>The Right Way to Breathe</h1>
+          <p>It sounds simple. Breathe right and you can relax.<br><br>
+            There are two ways to breathe: through your chest or through your belly. When anxious, we tend to take quick, shallow breaths through our chests. This causes us to hyperventilate and makes the feelings of anxiety worse. Deep slow breathing works to counteract this using diaphragmatic breathing.</p>
+        </div>
+      </ion-slide>
+
+      <ion-slide class="breathe-slide">
+        <div class="box2 box">
+          <div class="slide-image"></div>
+          <h1>Inhale</h1>
+          <p>To begin, you&#8217;ll take a long, slow breath through your nose. As you breathe in, push your belly out. Once your lungs are full, hold the breath for a moment.<br><br>
+            To make sure you&#8217;re doing it right, place a hand on your belly and a hand on your chest. As you breathe in, the hand on your stomach should rise while the hand on your chest remains still.</p>
+        </div>
+      </ion-slide>
+
+      <ion-slide class="breathe-slide">
+        <div class="box3 box">
+          <div class="slide-image"></div>
+          <h1>Exhale</h1>
+          <p>Next, you&#8217;ll exhale slowly through your mouth, pulling your belly in as you do so. Try to push all the air out.<br><br>
+            Once done, pause for a few moments. You&#8217;ll repeat this cycle 8 times. As you grow more comfortable, adjust the breathing settings. There are many sound options and cycle lengths.<br><br>
+            <button class="button-start" ng-click="confirm()" ng-show="intro">OK, GOT IT.</button>
+          </p>
+
+      </div>
+      </ion-slide>
+
+    </ion-slide-box>
+  </ion-content>
+</ion-view>

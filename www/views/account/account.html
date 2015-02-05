@@ -1,0 +1,43 @@
+<ion-view title="ACCOUNT" id="account">
+
+  <div class="back"></div>
+  <ion-content> 
+
+    <ion-list class="list">
+      <ion-item class="item no-active">
+        <strong>Name:</strong> {{user.user.name}}
+      </ion-item>
+      <ion-item class="item no-active">
+        <strong>Email:</strong> {{user.user.email}} 
+      </ion-item>
+      <ion-item class="item no-active doubleTap">
+        <strong>Type:</strong> {{getAccountType()}} 
+      </ion-item>
+      <ion-item class="item no-active" ng-show="isPremium()">
+        <strong>Expires On:</strong> {{getPremiumExpiration()}} 
+      </ion-item>
+      <ion-item ng-click="upgrade()" class="item item-icon-left logout" ng-show="canUpgrade()">
+        <i class="icon ion-ios7-pricetag-outline"></i>
+        <strong>Upgrade for Full Access {{getShortTermPrice()}}</strong>
+      </ion-item>
+      <ion-item ng-click="goToNotifications()" class="item item-icon-left logout">
+        <i class="icon ion-ios7-chatbubble-outline"></i>
+        <strong>Notification Settings</strong>
+      </ion-item>
+      <ion-item ng-click="sharePacifica()" class="item item-icon-left logout">
+        <i class="icon ion-ios7-personadd-outline"></i>
+        <strong>Share Pacifica</strong>
+      </ion-item>
+      <ion-item ng-click="sendFeedback()" class="item item-icon-left logout">
+        <i class="icon ion-ios7-paperplane-outline"></i>
+        <strong>Give Feedback</strong>
+      </ion-item>
+      <ion-item ng-click="logout()" class="item item-icon-left logout">
+        <i class="icon ion-ios7-arrow-thin-right"></i>
+        <strong>Sign Out</strong>
+
+      </ion-item>
+    </ion-list>
+
+  </ion-content>
+</ion-view>

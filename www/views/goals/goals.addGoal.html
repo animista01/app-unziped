@@ -1,0 +1,35 @@
+<ion-view title="" hide-nav-bar="true" class="popoverr add-goal">
+  <div class="back"></div>
+  <ion-content>
+    <go-back ng-show="!nux"></go-back>
+    <h1>NEW LONG-TERM GOAL</h1>
+
+    <div>
+      <label class="goal-bolt {{getColorClass()}}" ng-class="{error: viewData.error}">
+        <input type="text" placeholder="I want to reduce my..." ng-model="viewData.goal" pa-enter="closeKeyboard()"></input>
+      </label>
+
+      <label class="color-block mod item item-select {{getColorClass()}}" ng-show="displayColorOptions">
+        <select ng-model="colorOptions.colorOptionOrdinal" ng-options="colorOptions.colors.indexOf(item) as getColorOptionDisplay(item) for item in colorOptions.colors" ng-change="updateColorOption()" style="color: rgb(150,150,150); background-color: rgb(250,250,250);">
+        </select>
+      </label>
+
+    </div>
+
+    <div class="clearfix goal-presets">
+      <h3>EXAMPLE GOALS:</h3>
+      <div ng-click="setPredefinedGoal('daily anxiety')" class="one">Daily Anxiety</div>
+      <div ng-click="setPredefinedGoal('daily stress')" class="two">Daily Stress</div>
+      <div ng-click="setPredefinedGoal('social anxiety')" class="three">Social Anxiety</div>   
+      <div ng-click="setPredefinedGoal('daily worry')" class="four">Daily Worry</div>
+      <div ng-click="setPredefinedGoal('panic attacks')" class="five">Panic Attacks</div>
+      <div ng-click="setPredefinedGoal('negativity')" class="six">Negativity</div>
+    </div>
+
+
+   <div class="bar bar-footer">
+     <button class="button" ng-click="setGoal()" ng-disabled="viewData.submitting"> {{editing ? 'UPDATE GOAL' : 'SET GOAL'}}</button>
+   </div>
+
+  </ion-content>
+</ion-view>

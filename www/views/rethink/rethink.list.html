@@ -1,0 +1,45 @@
+<ion-view title="THOUGHTS" class="intro rethink">
+
+  <ion-nav-buttons side="right">
+    <a href="javascript:;" ui-sref="app.rethink-help"><button class="button button-clear icon ion-ios7-help-empty"></button></a>
+  </ion-nav-buttons>
+
+  <div class="back"></div>
+
+  <ion-content>
+	
+   <h2 class="quote" ng-show="thoughts.length == 0">&ldquo;Once you replace negative thoughts with positive ones, you'll start having positive results.&rdquo;<br>
+     <span>Willie Nelson</span>
+   </h2>
+
+
+    <div class="list">
+     <div ng-repeat="thought in thoughts" ng-class="{expanded: isShowingDetails(thought)}" class="item recording dragContainer hideRemove" ng-click="showDetails(thought)">
+
+      <span ng-click="renameThought(thought)">{{thought.title}}</span>
+      <span class="date">{{getThoughtDay(thought)}} at {{getThoughtTime(thought)}}</span>
+      <div class="counter-wrap">
+        <div class="positive">{{getMarks(thought, true)}}</div> <!-- positive -->
+        <div class="negative">{{getMarks(thought, false)}}</div> <!-- negative -->
+      </div>
+      
+      <div ng-show="isShowingDetails(thought)" ng-class="{expanded: isShowingDetails(thought)}">
+
+        <audio-line-item src="getRecordingSource(thought, 'thought')" duration="getRecordingDuration(thought, 'thought')" tags="getRecordingTags(thought, 'thought')" class="thought-history" hide="!isShowingDetails(thought)"></audio-line-item>
+
+        <audio-line-item src="getRecordingSource(thought, 'analysis')" duration="getRecordingDuration(thought, 'analysis')" tags="getRecordingTags(thought, 'analysis')" class="thought-history" bg-color="#60d293" hide="!isShowingDetails(thought)"></audio-line-item>
+
+      </div>
+
+      <div class="remove" ng-click="archiveThought(thought);" ng-show="!isShowingDetails(thought);"></div>
+
+     </div>
+
+    </div>
+  
+  </ion-content>
+  <a href="javascript:;" ui-sref="app.rethink-start" class="circle-button item item-icon-left">
+    <i class="icon ion-ios7-plus-empty"></i>
+    <span ng-show="thoughts.length == 0" class="tooltip">Something on your mind?<br>Add a new thought each day.</span>
+  </a>
+</ion-view>

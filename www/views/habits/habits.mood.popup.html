@@ -1,0 +1,34 @@
+<ion-modal-view class="mood-warning">
+
+  <ion-content class="filter-popover">
+
+    <div class="item cta">
+      <span>Your first mood rating is complete.<br>
+      Two more tools are now available.</span>
+    </div>
+    <div class="item item-icon-left">
+      <i class="icon ion-ios7-eye-outline"></i>
+      <span><strong>RELAX: </strong>Use this tool when you want to calm down.</span>
+    </div>
+
+    <div class="item item-icon-left" ng-click="closeNuxModal()">
+      <i class="icon ion-ios7-heart-outline"></i>
+      <span><strong>HEALTH: </strong>Use this tool to set goals and discover triggers.</span>
+    </div>
+
+    <!--<div class="item cta" ng-show="!positive && neutral">
+      <span>Neutral emotions are okay.<br>
+      Enjoy the even-keel moment.</span>
+    </div>
+
+    <div class="item cta" ng-show="positive && !neutral">
+      <span>Positive emotions are great.<br>
+      Let&#8217;s work to maintain these.</span></div>-->
+
+
+    <div ng-click="closeNuxModal()" class="button-start">
+      OK, GOT IT.
+    </div>
+
+  </ion-content>
+</ion-modal-view>

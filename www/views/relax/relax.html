@@ -1,0 +1,42 @@
+<ion-view title="RELAX" class="intro breathe">
+
+	<ion-nav-buttons side="right">
+    <a href="javascript:;" ui-sref="app.relax-help"><button class="button button-clear icon ion-ios7-help-empty"></button></a>
+
+    <a href="javascript:;" ui-sref="app.relax-config"><button class="button button-clear icon ion-ios7-gear-outline"></button></a>
+  </ion-nav-buttons>
+
+  <div class="back"></div>
+  
+  <ion-content>
+  	<h2>RELAX</h2>
+    <p>Before you start, find a quiet place and choose your settings. This exercise is best experienced with audio.</p>
+
+    <div class="list">
+
+
+      <div class="item item-icon-left item-select" style="background-color: rgba(0,0,0,.3)">
+        <i class="icon ion-ios7-eye-outline" style="font-size: 40px;"></i>
+        <select ng-model="exerciseOptions.exerciseOptionOrdinal" ng-options="exerciseOptions.options.indexOf(item) as getExerciseOptionDisplay(item) for item in exerciseOptions.options" ng-change="updateExerciseOption()">
+
+        </select>
+      </div>
+
+      <div class="item item-icon-left item-select">
+  		  <i class="icon ion-ios7-loop" style="font-size: 20px;"></i>
+  		  <select ng-model="cycleOptions.cycleOptionOrdinal" ng-options="cycleOptions.options.indexOf(item) as getCycleOptionDisplay(item) for item in cycleOptions.options" ng-change="updateCycleLength()">
+			  </select>
+      </div>
+
+  
+      <div class="item item-icon-left item-select">
+        <i class="icon icon-sound {{soundOptions.soundOptionOrdinal <= 7 ? 'true' : 'false'}}" style="font-size: 20px;"></i>
+        <select ng-model="soundOptions.soundOptionOrdinal" ng-options="soundOptions.options.indexOf(item) as getSoundOptionDisplay(item) for item in soundOptions.options" ng-change="updateSoundOption()">
+
+        </select>
+      </div>
+
+    </div>
+    <a href="javascript:;" ng-click="startExercise();" class="item button-start">START</a>
+  </ion-content>
+</ion-view>

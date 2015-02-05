@@ -1,0 +1,21 @@
+<ion-view title="" hide-nav-bar="true" class="popoverr slideshow">
+  <ion-content>
+
+    <go-back ng-show="!intro"></go-back>
+
+    <ion-slide-box on-slide-changed="slideHasChanged($index)" show-pager="false">
+      <ion-slide class="rethink-slide">
+        <div class="box box3">
+          <div class="slide-image"></div>
+          <h1>Step 2: Listen Again</h1>
+          <p>
+            Next, listen back to yourself. Imagine you&#8217;re listening to a close friend. Do you hear inaccurate, unfounded, or negative thoughts? Whenever you do, tap the NEGATIVE button. You&#8217;ll then be asked to identify the type of cognitive distortion.<br><br>
+            Do you hear positive thoughts as well? Whenever you do, tap the POSITIVE button.
+          </p>
+          <div ng-click="confirm()" class="button-start" ng-show="intro">OK, GOT IT.</div>
+        </div>
+      </ion-slide>
+
+    </ion-slide-box>
+  </ion-content>
+</ion-view>

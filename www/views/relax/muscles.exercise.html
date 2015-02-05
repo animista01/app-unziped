@@ -1,0 +1,45 @@
+<ion-view title="{{getExerciseTitle()}}" class="popoverr breathe">
+
+	<ion-nav-buttons side="right">
+    <a href="javascript:;" ui-sref="app.muscles-help"><button class="button button-clear icon ion-ios7-help-empty"></button></a>
+  </ion-nav-buttons>
+
+  <div class="back"></div>
+  
+  <ion-content>
+
+
+    <audio id="inhaleAudio" webkit-playsinline>
+      <source src="./img/background-sounds/inhale.mp3" type="audio/mp3">
+    </audio>
+
+    <audio id="exhaleAudio" webkit-playsinline>
+      <source src="./img/background-sounds/exhale.mp3" type="audio/mp3">
+    </audio>
+
+    <!-- Source will get set by the controller. -->
+    <audio id="bgAudio" loop webkit-playsinline>
+      <source type="audio/mp3">
+    </audio>
+
+  	<h2>
+  		{{getExerciseHeader()}}
+  	</h2>
+
+  	<graph-selector values="values" color-percentages="colorPercentages" value-data="valueData" selectable="selectable" colors="graphColors" goal-percentage="0.4" class="{{isBreatheCycle}}"></graph-selector>
+
+    <div id="groupDisplay" class="group{{getGroupNumber()}} {{inhale ? 'inhale' : 'exhale'}} {{isBreatheCycle}}"></div>
+
+    <div class="control" ng-click="pause()">
+  	 <i class="icon {{paused ? 'ion-ios7-play-outline' : 'ion-ios7-pause-outline'}}"></i>
+    </div>
+
+    <div class="bar bar-footer">
+      <span class="info">
+      {{getExerciseInstructions()}}
+      </span>
+    </div>
+  
+  </ion-content>
+
+</ion-view>

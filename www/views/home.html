@@ -1,0 +1,39 @@
+<ion-view title="" hide-back-button="true">
+
+  <ion-nav-buttons side="left">
+
+    <button ng-click="goToProgress();" class="button button-clear button-icon icon ion-stats-bars"></button>
+  </ion-nav-buttons>
+  <ion-nav-buttons side="right">
+    <!--<a href="javascript:;" ui-sref="#"><button class="button button-clear icon ion-ios7-help-empty"></button></a>-->
+    
+    <a href="javascript:;" ui-sref="app.account"><button class="button button-clear icon ion-ios7-person-outline"></button></a>
+  </ion-nav-buttons>
+  
+  <ion-content class="has-header">
+
+    <div class="list home-menu">
+      <a class="item item-divider" style="text-align: center; color: #5ce59d;">TODAY&#8217;S TASKS</a>
+      <a ng-click="goToMood()" class="item mood item-icon-left">
+        <i class="icon"></i>Mood<span class="status goal is-goal {{hitMoodGoal() ? 'true': ''}}"><!--{{getTodaysMoodCount()}}/3--></span>
+      </a>
+      <a ng-click="goToRelax()" class="item breathe item-icon-left item-icon-right" ng-class="{disabled: !isRelaxEnabled() || (!isPremiumEnabled() && !isRelaxActive())}"> 
+        <i class="icon ion-ios7-eye-outline"></i>Relax<span class="status goal {{isRelaxActive() ? 'is-goal' : ''}} {{hitRelaxGoal() ?'true' : ''}}"><!--{{getRelaxActivityCount()}}/1--></span>
+        <i class="icon ion-ios7-locked-outline"></i>
+      </a>
+      <a ng-click="goToRethink()" class="item rethink item-icon-left item-icon-right" ng-class="{disabled: !isRethinkEnabled() || (!isPremiumEnabled() && !isRethinkActive())}">
+        <i class="icon ion-ios7-lightbulb-outline"></i>Thoughts<span class="status goal {{isRethinkActive() ? 'is-goal' : ''}} {{hitRethinkGoal() ? 'true' : ''}}"><!--{{getRethinkActivityCount()}}/1--></span>
+        <i class="icon ion-ios7-locked-outline"></i>
+      </a>
+      <a ng-click="goToGoals();" class="item goals item-icon-left item-icon-right" ng-class="{disabled: !isGoalsEnabled() || (!isPremiumEnabled() && !isGoalsActive())}">
+        <i class="icon ion-ios7-bolt-outline"></i>Experiments<span class="status goal {{isGoalsActive() ? 'is-goal' : ''}} {{hitGoalsGoal() ? 'true' : ''}}"><!--{{getGoalsActivityCount()}}/1--></span>
+        <i class="icon ion-ios7-locked-outline"></i>
+      </a>
+      <a ng-click="goToHabits()" class="item habits item-icon-left item-icon-right" ng-class="{disabled: !isHabitsEnabled()}">
+        <i class="icon ion-ios7-heart-outline"></i>Health<span class="status goal is-goal {{hitHabitsGoal() ? 'true' : ''}}"><!--{{getCompletedHabits()}}/{{getHabitCount()}}--></span>
+        <i class="icon ion-ios7-locked-outline"></i>
+      </a>
+    </div>
+
+	</ion-content>
+</ion-view>

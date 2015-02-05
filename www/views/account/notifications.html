@@ -1,0 +1,21 @@
+<ion-view title="NOTIFICATIONS" id="notifications">
+
+  <div class="back"></div>
+  <ion-content> 
+
+
+    <ion-list class="list habits-menu">
+      <div class="item item-divider" style="color: #5ce59d;">MOOD REMINDERS</div>
+
+      <ion-radio ng-model="data.notifications" value="0" ng-change="updateNotifications()">OFF</ion-radio>
+      <ion-radio ng-model="data.notifications" value="1" ng-change="updateNotifications()">1X A DAY</ion-radio>
+      <ion-radio ng-model="data.notifications" value="3" ng-change="updateNotifications()">3X A DAY</ion-radio>
+
+    </ion-list>
+
+    <div ng-show="notificationsUpdated" class="UI-alert">
+      Notifications Updated
+    </div>
+
+  </ion-content>
+</ion-view>

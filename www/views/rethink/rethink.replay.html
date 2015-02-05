@@ -1,0 +1,41 @@
+<ion-view title="STEP 2 OF 3" class="popoverr">
+
+	<ion-nav-buttons side="right">
+    <a href="javascript:;" ng-click="showHelp()"><button class="button button-clear icon ion-ios7-help-empty"></button></a>
+  </ion-nav-buttons>
+  	<div class="back"></div> 
+	<ion-content class="rethink step2">
+
+
+		<h1>
+		  Press play &amp; tap when you hear <strong>positive</strong> or <strong>negative</strong> thoughts.
+		</h1>
+
+		<div id="waveform-timeline"></div>
+		<div id="waveform" style-"width: 100%; height: 50px;" ng-click="setPosition($event)"></div>
+
+		<div class="audio-time">
+			{{getAudioTime()}}
+		</div>
+		<div class="record-button-wrapper" style="position: relative;">
+			<div ng-show="!playing">
+				<a ng-click="playPause()" class="play"></a>
+			</div>
+			<div ng-show="playing">
+				<a ng-click="playPause()" class="pause"></a>
+			</div>
+			<div ng-show="state.finishedPlaying" ng-click="resetReplay();" class="reset-btn">RESET</div>
+			<div ng-show="state.finishedPlaying" ng-click="nextStep();" class="next-btn">NEXT</div>
+			<div class="counter-wrap">
+				<div class="positive">{{getMarkCount(true)}}</div>
+				<div class="negative">{{getMarkCount(false)}}</div>
+			</div>
+		</div>
+		<div class="bar bar-footer">
+			<div ng-click="markAudio()" class="btn-red">NEGATIVE</div>
+			<div ng-click="assignThoughts(true)" class="btn-green">POSITIVE</div>
+		</div>
+
+
+	</ion-content>
+</ion-view>

@@ -1,0 +1,83 @@
+<ion-view title="HOW ARE YOU?" class="popoverr mood">
+  <ion-nav-buttons side="right">
+    <a href="javascript:;" ui-sref="app.habits-Mood-help"><button class="button button-clear icon ion-ios7-help-empty"></button></a>
+  </ion-nav-buttons>
+  <div class="back"></div>
+  <ion-content>
+   <!-- <go-back></go-back>
+    <div class="help">
+      <a ui-sref="app.habits-Mood-help">?</a>
+    </div>-->
+
+    <!--<h1>How are you feeling?</h1>-->
+
+    <graph-selector values="habit.habitValues" value-data="valueData" selectable="true" colors="colors" color-percentages="colorPercentages" show-ticks="true" goal-percentage="goalPercentage" segmented="true" class="{{noDataError ? 'error' : ''}}"></graph-selector>
+    <span ng-show="!getInteracted()" class="tooltip-default">First, choose your current mood. Then, select any specific feelings.</span>
+
+    <div ng-show="showSubValueSection('Relaxed')" class="feeling-wrapper {{getValueClass()}}">
+      <div ng-class="{active: subValueIsActive('Relaxed')}" ng-click="setSelectedSubValue('Relaxed')">
+        Relaxed
+      </div>
+      <div ng-class="{active: subValueIsActive('Loved')}" ng-click="setSelectedSubValue('Loved')">
+        Loved
+      </div>
+      <div ng-class="{active: subValueIsActive('Grateful')}" ng-click="setSelectedSubValue('Grateful')">
+        Grateful
+      </div>
+      <div ng-class="{active: subValueIsActive('Excited')}" ng-click="setSelectedSubValue('Excited')">
+        Excited
+      </div>
+      <div ng-class="{active: subValueIsActive('Happy')}" ng-click="setSelectedSubValue('Happy')">
+        Happy
+      </div>
+      <div ng-class="{active: subValueIsActive('Inspired')}" ng-click="setSelectedSubValue('Inspired')">
+        Inspired
+      </div>
+    </div>
+    <div ng-show="showSubValueSection('Calm')" class="feeling-wrapper {{getValueClass()}}">
+      <div ng-class="{active: subValueIsActive('Calm')}" ng-click="setSelectedSubValue('Calm')">
+        Calm
+      </div>
+      <div ng-class="{active: subValueIsActive('Loved')}" ng-click="setSelectedSubValue('Loved')">
+        Loved
+      </div>
+      <div ng-class="{active: subValueIsActive('Grateful')}" ng-click="setSelectedSubValue('Grateful')">
+        Grateful
+      </div>
+      <div ng-class="{active: subValueIsActive('Anxious')}" ng-click="setSelectedSubValue('Anxious')">
+        Anxious
+      </div>
+      <div ng-class="{active: subValueIsActive('Stressed')}" ng-click="setSelectedSubValue('Stressed')">
+        Stressed
+      </div>
+      <div ng-class="{active: subValueIsActive('Lonely')}" ng-click="setSelectedSubValue('Lonely')">
+        Lonely
+      </div>
+    </div>
+    <div ng-show="showSubValueSection('Panicked')" class="feeling-wrapper {{getValueClass()}}">
+      <div ng-class="{active: subValueIsActive('Panicked')}" ng-click="setSelectedSubValue('Panicked')">
+        Panicked
+      </div>
+      <div ng-class="{active: subValueIsActive('Sad')}" ng-click="setSelectedSubValue('Sad')">
+        Sad
+      </div>
+      <div ng-class="{active: subValueIsActive('Angry')}" ng-click="setSelectedSubValue('Angry')">
+        Angry
+      </div>
+      <div ng-class="{active: subValueIsActive('Anxious')}" ng-click="setSelectedSubValue('Anxious')">
+        Anxious
+      </div>
+      <div ng-class="{active: subValueIsActive('Stressed')}" ng-click="setSelectedSubValue('Stressed')">
+        Stressed
+      </div>
+      <div ng-class="{active: subValueIsActive('Lonely')}" ng-click="setSelectedSubValue('Lonely')">
+        Lonely
+      </div>
+    </div>
+
+
+    <div class="bar bar-footer">
+      <button class="button button-large" ng-click="submitData()" ng-disabled="submittingData">Confirm</button>
+    </div>
+  </ion-content>
+</ion-view>

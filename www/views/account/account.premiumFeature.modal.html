@@ -1,0 +1,23 @@
+<ion-modal-view class="touchpoint premium popoverr">
+
+  <ion-content class="filter-popover">
+  
+    <a href="javascript:;" ng-click="closePremiumModal()" class="go-back">X</a>
+
+    <div class="box">
+    <div class="slide-image"></div>
+    <h1>Get Full Access</h1>
+    <p>
+      In order to enable this feature, you&#8217;ll need to upgrade to Full Access.<br><br>
+      We offer two affordable options. If you would like to <strong>trial</strong> Pacifica, select <strong>Monthly</strong>.
+    </p>
+ 
+    <button ng-click="purchaseShortTerm()" class="button-start">
+      {{getShortTermProductDuration()}} for {{getShortTermProductPrice()}}
+    </button>
+    <button ng-click="purchaseYearly()" class="button-start" style="margin-top: 10px;">
+      {{getYearlyProductDuration()}} for {{getYearlyProductPrice()}}
+    </button>
+    </div>
+  </ion-content>
+</ion-modal-view>

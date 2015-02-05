@@ -1,0 +1,47 @@
+<ion-view title="HEALTH">
+
+  <ion-nav-buttons side="right">
+    <a href="javascript:;" ui-sref="app.habits-help"><button class="button button-clear icon ion-ios7-help-empty"></button></a>
+    <a href="javascript:;" ui-sref="app.habits-config"><button class="button button-clear icon ion-ios7-gear-outline {{!habits.length ? 'disabled' : ''}}"></button></a>
+  </ion-nav-buttons>
+  <div class="back"></div>
+  <ion-content> 
+
+    <audio id="goalAudio" webkit-playsinline>
+      <source src="./img/goal.mp3" type="audio/mp3">
+    </audio>
+
+    <div class="list habits-menu">
+
+
+      <div class="item item-divider item-icon-left item-icon-right">
+        <!-- #DB: note the disabled class -->
+        <i class="icon ion-arrow-left-b {{!canGoBackwards() ? 'disabled' : ''}}" ng-click="previousDay()"></i>{{getDateString()}}<i class="icon ion-arrow-right-b {{!canGoForward() ? 'disabled' : ''}}" ng-click="nextDay()"></i>
+      </div>
+      <h2 class="quote" ng-show="habits.length == 0">&ldquo;The groundwork of all happiness is health.&rdquo;<br>
+     <span>Leigh Hunt</span>
+      </h2>
+      <div ng-repeat="habit in habits" class="dragContainer">
+
+        <a ng-click="navigateToHabit('app.habits-' + habit.name)" class="item {{habit.name}} {{getHabitData(habit.ordinate).display}} hideRemove {{getHabitData(habit.ordinate).goalMet}}">
+
+          <habit-line-item class="item-icon-left inline-block" habit="habit"></habit-line-item>
+
+          <span class="status goal" ng-show="!getHabitData(habit.ordinate)">?</span>
+
+          <span class="status {{getHabitData(habit.ordinate).goalMet}}">{{getHabitData(habit.ordinate).display}}</span>
+
+          <div class="remove" ng-click="removeHabit(habit.id)"></div>
+
+        </a>
+
+      </div> 
+
+      <div ng-show="loadingData" style="text-align:center; color: white">LOADING DATA</div>
+      
+    </div>
+    <a ng-click="addHabits()" class="item add-new-habit item-icon-left {{canAddHabits() ? '' : 'disabled'}}">
+      <i class="icon ion-ios7-plus-empty"></i>ADD ACTIVITY
+    </a>
+  </ion-content>
+</ion-view>

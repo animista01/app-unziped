@@ -1,0 +1,77 @@
+<ion-view title="EXPERIMENTS" class="intro goals">
+
+	<ion-nav-buttons side="right">
+    <a href="javascript:;" ui-sref="app.goals-help"><button class="button button-clear icon ion-ios7-help-empty"></button></a>
+  </ion-nav-buttons>
+
+  <div class="back"></div>
+  
+  <ion-content>
+
+    <div class="clearfix">
+  	  <div ng-class="{active: activeTab == 'daily'}" ng-click="setActiveTab('daily')" class="goal-tab">TODAY</div>
+      <div ng-class="{active: activeTab == 'longTerm'}" ng-click="setActiveTab('longTerm')" class="goal-tab">GOALS</div>
+    </div>
+
+    <div class="list goals-menu short-term" ng-show="activeTab == 'daily'">
+      <div ng-repeat="subGoal in daysSubGoals track by subGoal.id" ng-click="achieveSubGoal(subGoal)" class="item item-icon-left dragContainer hideRemove {{getSubGoalColorClass(subGoal)}}">
+        {{subGoal.title}}
+          <span ng-show="achievedSubGoal(subGoal)" class="status goal true">{{subGoal.difficulty}}</span>
+          <span ng-show="!achievedSubGoal(subGoal)" class="status goal">Tap when complete</span>
+
+          <div class="edit" ng-click="editSubGoal(subGoal)"></div>
+          <div class="remove" ng-click="archiveSubGoal(subGoal)"></div>
+      </div>
+
+      <div ng-show="!daysSubGoals || daysSubGoals.length == 0">
+        <h2>&ldquo;{{getQuote()}}&rdquo;<br>
+          <span>{{getAuthor()}}</span></h2>
+      </div>
+    </div>
+
+    <div class="list goals-menu long-term" ng-show="activeTab == 'longTerm'">
+      <div ng-repeat="goal in goals track by goal.id">
+
+          <div class="item item-icon-left dragContainer hideRemove {{getGoalColorClass(goal)}}" ng-click="expandGoal(goal)">
+            <i class="icon ion-ios7-bolt-outline"></i>
+            {{goal.title}}
+            <i class="icon ion-ios7-star {{getAchievedGoalClass(goal)}}"></i>
+
+            <span class="status goal">{{getAchievedGoalDifficulty(goal)}}</span>
+
+            <div class="edit" ng-click="editGoal(goal)"></div>
+            <div class="remove" ng-click="archiveGoal(goal)"></div>
+          </div>
+
+
+          <div ng-repeat="subGoal in getAchievedSubGoals(goal) track by subGoal.id" ng-show="isGoalExpanded(goal)">
+
+            <div class="item item-icon-left completed {{getSubGoalColorClass(subGoal)}}">
+              {{subGoal.title}}
+
+              <em>{{getPrintableDate(subGoal)}}</em>
+
+              <span class="status goal {{achievedSubGoal(subGoal) ? 'true': ''}}">{{subGoal.difficulty}}</span>
+            </div>
+          </div>
+      </div>
+      <div ng-show="!goals || goals.length == 0">
+        <h2>&ldquo;A goal is not always meant to be reached, it often serves simply as something to aim at.&rdquo;<br>
+        <span>Bruce Lee</span></h2>
+      </div>
+    </div>
+    
+    <!--<a href="javascript:;" ng-click="startExercise();" class="item button-start">START</a>-->
+
+  </ion-content>
+
+  <div ng-click="addSubGoal()" ng-show="goals && goals.length > 0 && activeTab == 'daily'" class="circle-button item item-icon-left" ng-show="activeTab == 'daily'">
+    <i class="icon ion-ios7-plus-empty"></i>
+    <span ng-show="!daysSubGoals || daysSubGoals.length == 0" class="tooltip">What could you do today that would cause you a little bit of stress or anxiety?</span>
+  </div>
+  <div ng-click="addGoal()" class="circle-button item item-icon-left" ng-show="activeTab == 'longTerm'">
+    <i class="icon ion-ios7-plus-empty"></i>
+    <span ng-show="!goals || goals.length == 0" class="tooltip">Add a long term goal of yours. It can be anything.</span>
+  </div>
+
+</ion-view>

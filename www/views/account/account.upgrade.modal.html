@@ -1,0 +1,28 @@
+<ion-modal-view class="touchpoint premium popoverr">
+
+  <ion-content class="filter-popover">
+
+    <a href="javascript:;" ng-click="closePremiumModal()" class="go-back">X</a>
+
+    <div class="box">
+
+      <div class="slide-image"></div>
+      <h1>Get Full Access</h1>
+      <p>
+        <strong class="subhead">Only three of the tools are available each day.</strong>For unlimited use, upgrade to unlock the complete suite of tools designed to help you tackle stress and anxiety.<br><br>
+        We offer two affordable options. The monthly includes a <strong>7-day free trial</strong>.
+      </p>
+   
+    <button ng-click="purchaseShortTerm()" class="button-start">
+      {{getShortTermProductDuration()}} for {{getShortTermProductPrice()}}
+    </button>
+    <button ng-click="purchaseYearly()" class="button-start" style="margin-top: 10px;">
+      {{getYearlyProductDuration()}} for {{getYearlyProductPrice()}}
+    </button>
+    <!-- Debugging -->
+    <!--
+    <span ng-click="refreshStore()">Refresh</span>
+    -->
+    </div>
+  </ion-content>
+</ion-modal-view>

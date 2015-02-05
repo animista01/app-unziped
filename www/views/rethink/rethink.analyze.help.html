@@ -1,0 +1,22 @@
+<ion-view title="" hide-nav-bar="true" class="popoverr slideshow">
+  <ion-content>
+
+    <go-back ng-show="!intro"></go-back>
+
+    <ion-slide-box on-slide-changed="slideHasChanged($index)" show-pager="false">
+      <ion-slide class="rethink-slide">
+        <div class="box box4">
+          <div class="slide-image"></div>
+          <h1>Step 3: Take Two</h1>
+          <p>
+            Finally, record a more realistic take on the original thought. This time, stick to the facts. What&#8217;s another way of thinking about things? What would you say to a friend under the same circumstances?<br><br>
+            When you&#8217;re ready, press the record button and answer again.
+          </p>
+          <div ng-click="confirm()" class="button-start">OK, GOT IT.</div>
+        </div>
+      </ion-slide>
+
+    </ion-slide-box>
+
+  </ion-content>
+</ion-view>

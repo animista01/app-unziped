@@ -1,0 +1,29 @@
+<ion-view title="" hide-nav-bar="true" class="popoverr">
+  <div class="back"></div>
+  <ion-content>
+
+    <go-back></go-back>
+
+    <h1>Add Daily Activity</h1>
+    
+    <div class="list habits-menu">
+
+    	<!--<div ng-repeat="habit in habits | filter:name='!mood' ">
+    		<!-- pull out into directive.
+        <div class="item {{habit.name}} item-icon-right active">
+        	<span class="item-icon-left display-block" habit-line-item="exp" habit="habit"></span>
+          <i class="icon pac-icon icon-mouse ion-ios7-minus-outline" ng-click="removeHabit(habit.id)"></i>
+        </div>
+      </div>-->
+
+      <div ng-repeat="habit in potentialHabits | filter:name='!mood' ">
+      	<div class="item {{habit.name}} item-icon-right inactive" ng-click="addHabit(habit)">
+      		<habit-line-item class="item-icon-left display-block" habit="habit"></habit-line-item>
+      		<i class="icon icon-mouse ion-ios7-plus-empty"></i>
+      	</div>
+      </div>
+
+    </div>
+
+  </ion-content>
+</ion-view>

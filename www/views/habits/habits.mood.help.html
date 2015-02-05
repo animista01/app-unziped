@@ -1,0 +1,20 @@
+<ion-view title="" hide-nav-bar="true" class="popoverr slideshow mood-help">
+  <ion-content>
+
+  <go-back ng-show="!intro"></go-back>
+
+    <ion-slide-box on-slide-changed="slideHasChanged($index)" show-pager="false">
+
+      <ion-slide class="mood-slide"> 
+        <div class="box1 box">
+          <div class="slide-image"></div>
+          <h1>Track Your Mood</h1>
+          <p>The first step in dealing with stress and anxiety is noting how you feel throughout the day. To keep track of your progress, try to rate your mood throughout the day (morning, afternoon, and night for example).<br><br>Don&#8217;t worry about the rating itself. The goal here is not to feel a certain way, but to be as honest as possible with your current feelings.</p>
+
+          <button class="button-start" ng-click="confirm()" ng-show="intro">OK, GOT IT.</button>
+        </div>
+      </ion-slide>
+
+    </ion-slide-box>
+  </ion-content>
+</ion-view>

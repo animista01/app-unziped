@@ -1,0 +1,23 @@
+<ion-view title="" hide-nav-bar="true" class="popoverr slideshow">
+  <ion-content>
+
+    <go-back ng-show="!intro"></go-back>
+
+    <ion-slide-box on-slide-changed="slideHasChanged($index)" show-pager="false">
+      <ion-slide class="rethink-slide">
+        <div class="box box2">
+          <div class="slide-image"></div>
+          <h1>Step 1: Just Talk</h1>
+          <p>
+            The first step in THOUGHTS asks that you talk about an anxious moment during your day. Use the example questions to help get you started. What went through your mind? What&#8217;s the worst that could happen?<br><br>
+            When you&#8217;re ready, press the record button and talk. There&#8217;s a 2 minute limit.
+          </p>
+          
+          <button class="button-start" ng-click="confirm()" ng-show="intro">OK, GOT IT.</button>
+        </div>
+      </ion-slide>
+
+    </ion-slide-box>
+
+  </ion-content>
+</ion-view>

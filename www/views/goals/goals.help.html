@@ -1,0 +1,27 @@
+<ion-view title="" hide-nav-bar="true" class="popoverr slideshow">
+  <ion-content>
+
+    <go-back ng-show="!intro"></go-back>
+
+    <ion-slide-box on-slide-changed="slideHasChanged($index)">
+
+      <ion-slide class="goals-slide">
+        <div class="box1 box">
+          <div class="slide-image"></div>
+          <h1>Experiments</h1>
+          <p>What could you do today that would cause you some anxiety? What small step could you take toward your goal? Start with easier experiments and work your way up to your biggest challenges. The important thing is to stick with it and not give in to your urge to leave a situation. If you stay  and use skills like deep breathing, you&#8217;ll notice that with time your anxiety decreases.</p>
+        </div>
+      </ion-slide>
+
+      <ion-slide class="goals-slide">
+        <div class="box2 box">
+          <div class="slide-image"></div>
+          <h1>Avoidance</h1>
+          <p>People with anxiety about certain situations or experiences often avoid them. This can make anxiety worse by preventing them from learning that they can get through these situations.<br><br>If you&#8217;ve been avoiding things, it might be time to start slowly facing your fears in order to conquer them. With practice, as you keep facing fears, you&#8217;ll reduce your anxiety and build confidence.</p>
+          <button class="button-start" ng-click="confirm()" ng-show="intro">OK, GOT IT.</button>
+        </div>
+      </ion-slide>
+
+    </ion-slide-box>
+  </ion-content>
+</ion-view>

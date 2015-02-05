@@ -1,0 +1,38 @@
+<ion-view title="STEP 1 OF 3" class="popoverr">
+
+	<ion-nav-buttons side="right">
+    <a href="javascript:;" ng-click="showRecordHelp()"><button class="button button-clear icon ion-ios7-help-empty"></button></a>
+  </ion-nav-buttons>
+
+  <div class="back"></div>  
+	
+	<ion-content class="rethink step1">
+
+
+		<h1>
+		  Talk about an anxious moment today.
+		</h1>
+		<p>QUESTIONS<br>What went through your mind when you started to feel anxious?</p>
+		<p>What was the worst thing that could have happened to you?</p>
+		<p>What did this experience mean to you?</p>
+		<div class="bar bar-footer">
+		<div class="record-button-wrapper">
+			<div ng-show="!recording" class="{{!canRecord() ? 'disabled' : ''}}">
+				<a ng-click="recordAudio();" class="record"></a>
+			</div>
+
+			<div ng-show="recording">
+				<a ng-click="stopRecording();" class="pause"></a>
+			</div>
+
+			<div ng-show="finishedRecording" ng-click="resetRecording();" class="reset-btn">RESET</div>
+			<div ng-show="finishedRecording" ng-click="nextStep();" class="next-btn">NEXT</div>
+			<div class="hint {{!canRecord() ? 'warn' : ''}}" ng-show="recording || finishedRecording">{{getElapsedTime()}}</div>
+			<div class="hint" ng-show="!recording && !finishedRecording">When you&#8217;re ready, press record.</div>
+		</div>	
+		</div>
+		
+
+
+	</ion-content>
+</ion-view>

@@ -1,0 +1,74 @@
+<ion-modal-view>
+
+  <ion-content class="filter-popover">
+  	<span ng-click="closeEmotionModal()" class="close">X</span>
+    <h1 class="title">What type of negative thought?<span ng-show="showError">Please select a negative thought to continue.</span></h1>
+
+    <div ng-click="setNegativeThought('catastrophizing')" class="neg-filter {{isSelected('catastrophizing') ? 'selected' : ''}}">
+      <h4>Catastrophizing</h4>
+      <span class="desc-text" ng-show="!isShowingHelp('catastrophizing')">If something goes wrong, it’ll be a disaster.</span>
+      <span class="help-text" ng-show="isShowingHelp('catastrophizing')">&ldquo;If I screw this up, I’m completely ruined.&rdquo;</span>
+      <span ng-click="showReplayHelp('catastrophizing')" class="help_toggle {{isShowingHelp('catastrophizing') ? 'on' : 'off'}}">?</span>
+    </div>
+
+    <div ng-click="setNegativeThought('emotional_reasoning')" class="neg-filter {{isSelected('emotional_reasoning') ? 'selected' : ''}}">
+      <h4>Emotional Reasoning</h4>
+      <span class="desc-text" ng-show="!isShowingHelp('emotional_reasoning')">Mistaking your feelings for actual facts.</span>
+      <span class="help-text" ng-show="isShowingHelp('emotional_reasoning')">&ldquo;I feel anxious, so this must be a scary situation.&rdquo;</span>
+      <span ng-click="showReplayHelp('emotional_reasoning')" class="help_toggle {{isShowingHelp('emotional_reasoning') ? 'on' : 'off'}}">?</span>
+    </div>
+
+    <div ng-click="setNegativeThought('mind_reading')" class="neg-filter {{isSelected('mind_reading') ? 'selected' : ''}}">
+      <h4>Mind Reading / Personalization</h4>
+      <span class="desc-text" ng-show="!isShowingHelp('mind_reading')">Believing you know thoughts &amp; motives of others.</span>
+      <span class="help-text" ng-show="isShowingHelp('mind_reading')">&ldquo;He seemed angry. He must be mad at me.&rdquo;</span>
+      <span ng-click="showReplayHelp('mind_reading')" class="help_toggle {{isShowingHelp('mind_reading') ? 'on' : 'off'}}">?</span>
+    </div>
+
+    <div ng-click="setNegativeThought('fortune_telling')" class="neg-filter {{isSelected('fortune_telling') ? 'selected' : ''}}">
+      <h4>Fortune Telling</h4>
+      <span class="desc-text" ng-show="!isShowingHelp('fortune_telling')">Predicting future events as if they were certain.</span>
+      <span class="help-text" ng-show="isShowingHelp('fortune_telling')">&ldquo;I know I’m going to forget what to say.&rdquo;</span>
+      <span ng-click="showReplayHelp('fortune_telling')" class="help_toggle {{isShowingHelp('fortune_telling') ? 'on' : 'off'}}">?</span>
+    </div>
+
+    <div ng-click="setNegativeThought('extreme_words')" class="neg-filter {{isSelected('extreme_words') ? 'selected' : ''}}">
+      <h4>Pressurized / Extreme Words</h4>
+      <span class="desc-text" ng-show="!isShowingHelp('extreme_words')">Using words like always, never, can’t, should, etc.</span>
+      <span class="help-text" ng-show="isShowingHelp('extreme_words')">&ldquo;I always screw up." or "I should be better.&rdquo;</span>
+      <span ng-click="showReplayHelp('extreme_words')" class="help_toggle {{isShowingHelp('extreme_words') ? 'on' : 'off'}}">?</span>
+    </div>
+
+    <div ng-click="setNegativeThought('judging')" class="neg-filter {{isSelected('judging') ? 'selected' : ''}}">
+      <h4>Labeling &amp; Judging</h4>
+      <span class="desc-text" ng-show="!isShowingHelp('judging')">Labeling yourself or others without information.</span>
+      <span class="help-text" ng-show="isShowingHelp('judging')">&ldquo;I’m a loser.” or “Other people are cruel.&rdquo;</span>
+      <span ng-click="showReplayHelp('judging')" class="help_toggle {{isShowingHelp('judging') ? 'on' : 'off'}}">?</span>
+    </div>
+    
+  	<!--<div ng-click="setNegativeThought('negative_filtering')" class="neg-filter">
+  		<h4>Negative Filtering</h4>
+  		Seeing only the negative and ignoring the positive.
+  	</div>
+
+  	<div ng-click="setNegativeThought('all_or_nothing')" class="neg-filter">
+  		<h4>All or Nothing</h4>
+  		Seeing things in black or white.
+  	</div>
+
+  	<div ng-click="setNegativeThought('overgeneralizing')" class="neg-filter">
+  		<h4>Overgeneralizing</h4>
+  		Conclusions based on one event.
+  	</div>
+
+    <div ng-click="setNegativeThought('personalization')" class="neg-filter">
+      <h4>Personalization</h4>
+      Taking things personally without reason.
+    </div>-->
+
+    <div ng-click="assignThoughts()" class="btn">
+      DONE
+    </div>
+
+  </ion-content>
+</ion-modal-view>

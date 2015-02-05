@@ -1,0 +1,27 @@
+<ion-view title="" hide-nav-bar="true" class="popoverr add-sub-goal">
+  <div class="back"></div>
+  <ion-content>
+    <go-back></go-back>
+    <h1>TODAY&#8217;S EXPERIMENT</h1>
+
+    <div>
+
+      <label class="goal-bolt mod {{getColorClass()}} item item-select">
+        <select ng-model="goalOptions.goalOptionOrdinal" ng-options="goalOptions.goals.indexOf(item) as getGoalOptionDisplay(item) for item in goalOptions.goals" ng-change="updateGoalOption()" style="color: rgb(150,150,150); background-color: rgb(250,250,250);">
+        </select>
+      </label>
+      <label class="{{getColorClass()}}" ng-class="{error: viewData.error}">
+        <input type="text" id="subgoal-name" placeholder="What's a small step toward this goal?" ng-model="viewData.subGoal" pa-enter="closeKeyboard()" style="padding-left:18px;"></input>
+      </label>
+    </div>
+
+    <h3>How difficult will it be?</h3>
+
+    <graph-selector values="difficultyValues" value-data="valueData" selectable="true" colors="difficultyColors" color-percentages="colorPercentages" show-ticks="true" goal-percentage="0.0" segmented="true" class="{{getColorClass()}} {{noDataError ? 'error' : ''}}"></graph-selector>
+
+   <div class="bar bar-footer">
+     <button class="button" ng-click="setSubGoal()" ng-disabled="viewData.submitting">{{editing ? 'UPDATE EXPERIMENT' : 'SET EXPERIMENT'}}</button>
+   </div>
+
+  </ion-content>
+</ion-view>

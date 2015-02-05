@@ -1,0 +1,13 @@
+<ion-view title="" hide-nav-bar="true" class="popoverr water">
+  <div class="back"></div>
+  <ion-content>
+  	<go-back></go-back>
+
+    <h1>How many glasses have you had today?</h1>
+    
+    <graph-selector values="habit.habitValues" value-data="valueData" selectable="true" colors="colors" color-percentages="colorPercentages" show-ticks="true" goal-percentage="goalPercentage" segmented="true" class="{{noDataError ? 'error' : ''}}"></graph-selector>
+  	<div class="bar bar-footer">
+    	<button class="button button-large" ng-click="submitData()" ng-disabled="submittingData">Confirm</button>
+  	</div>
+  </ion-content>
+</ion-view>

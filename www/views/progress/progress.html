@@ -1,0 +1,45 @@
+<ion-view title="MOOD HISTORY" class="progress-view">
+  <div class="back"></div> 
+  <ion-content>
+    <anxiety-graph series="series" has-data="hasData" show-breathe="showBreathe" show-rethink="showRethink" show-habits="showHabits" show-goals="showGoals"></anxiety-graph>
+    <div class="x-axis-wrap">
+        <span id="progressStartDate">{{startDay}}</span>
+        <span id="progressEndDate" ng-show="showProgressEndDate" style="left: auto; right: {{progressEndDatePosition}}px;">Today</span>
+    </div>
+
+    <!--<h1 class="goal-text">
+      <strong>Mood</strong> vs. Activities
+    	<span ng-show="goal == 'gad'">I want to feel less <strong>anxiety</strong> throughout my day.</span>
+    	<span ng-show="goal == 'social'">I want to feel less <strong>anxiety</strong> in social situations.</span>
+    	<span ng-show="goal == 'panic'">I want to reduce my <strong>anxiety</strong> attacks.</span>
+    </h1>-->
+
+    <div class="clearfix first-row">
+        <div ng-click="updateShowSeries('breathe')" class="{{showBreathe ? 'on' : 'off'}} breathe-prog">
+           <i class="icon ion-ios7-eye-outline"></i>
+           Relax<br>
+           <span>Completed {{breatheCount}}X</span>
+        </div>
+        <div ng-click="updateShowSeries('rethink')" class="{{showRethink ? 'on' : 'off'}} rethink-prog">
+           <i class="icon ion-ios7-lightbulb-outline"></i>
+           Thoughts<br>
+           <span>Completed {{rethinkCount}}X<span>
+        </div>
+    </div>
+
+    <div class="clearfix">
+        <div ng-click="updateShowSeries('goals')" class="{{showGoals ? 'on' : 'off'}} goal-prog">
+            <i class="icon ion-ios7-bolt-outline"></i>
+            Experiments<br>
+            <span>Completed {{goalCount}}X</span>
+        </div>
+        <div ng-click="updateShowSeries('habits')" class="{{showHabits ? 'on' : 'off'}}">
+            <i class="icon ion-ios7-heart-outline"></i>
+            Health<br>
+            <span>Completed {{habitCount}}X</span>
+        </div>
+    </div>
+    <span class="tooltip-default">Tap any of the activities to see your history.</span>
+
+  </ion-content>
+</ion-view>

@@ -1,0 +1,27 @@
+<ion-view title="Daily Goal Settings" class="popoverr">
+  <div class="back"></div>
+  <ion-content>
+    <div class="list habits-menu configure-goals">
+
+      <div ng-repeat="habit in habits | filter:name='!mood' ">
+
+        <a class="item item-{{habit.name}} item-icon-right item-select">
+          <habit-line-item class="item-icon-left" habit="habit"></habit-line-item>
+          <select ng-model="habit.goalOrdinal" ng-options="habit.habitValues.indexOf(item) as getGoalDisplay(item) for item in getHabitValues(habit)" style="color:white" ng-change="updateGoal(habit)">
+          </select>
+        </a>
+
+      </div>
+
+      <a ng-click="goBack()" class="item add-new-habit">
+        DONE
+      </a>
+      
+    </div>
+
+
+    <div ng-show="goalUpdated" class="UI-alert">
+      Goal Updated
+    </div>
+  </ion-content>
+</ion-view>

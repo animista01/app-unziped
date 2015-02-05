@@ -1,0 +1,20 @@
+<ion-view title="" hide-nav-bar="true" class="popoverr" id="nuxGoal">
+  <ion-content>
+   <div class="goal-options-wrapper">
+   <div ng-click="setGoal('gad')" class="{{getGoal() == 'gad' ? 'active' : 'item'}}">
+   	I want to feel less anxiety throughout my day.
+   </div>
+   <div ng-click="setGoal('social')" class="{{getGoal() == 'social' ? 'active' : 'item'}}">
+   	I want to feel less anxiety in social situations.
+   </div>
+   <div ng-click="setGoal('panic')" class="{{getGoal() == 'panic' ? 'active' : 'item'}}">
+   	I want to reduce my anxiety attacks.
+   </div>
+ </div>
+
+   <div class="error" ng-show="error" style="color: #d04b51; text-align: center; margin-top: 0px; font-size: 13px; ">Please select a goal</div>
+  <div class="bar bar-footer">
+    <button class="button button-large" ng-click="chooseGoal()">Confirm</button>
+  </div>
+  </ion-content>
+</ion-view>

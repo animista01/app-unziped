@@ -1,0 +1,21 @@
+<ion-view title="" hide-nav-bar="true" class="popoverr slideshow">
+  <ion-content>
+
+    <go-back ng-show="!intro"></go-back>
+
+    <ion-slide-box on-slide-changed="slideHasChanged($index)" show-pager="false">
+
+      <ion-slide class="visualize-slide">
+        <div class="box1 box">
+          <div class="slide-image"></div>
+          <h1>Positive Visualization</h1>
+          <p>In this step, RELAX asks that you record a positive visualization. Think about a scenario that would cause you anxiety. Now, imagine yourself excelling in this situation.<br><br>
+          When you&#8217;re ready, press the record button and state your affirmation. For example, &ldquo;I am calm&rdquo; or &ldquo;I can do anything I put my mind to.&rdquo;</p>
+
+          <button class="button-start" ng-click="confirm()" ng-show="intro">OK, GOT IT.</button>
+        </div>
+      </ion-slide>
+
+    </ion-slide-box>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,92 @@
+<ion-view title="" hide-nav-bar="true" class="popoverr slideshow app-habits-help">
+  <ion-content>
+
+  <go-back ng-show="!intro"></go-back>
+
+    <ion-slide-box on-slide-changed="slideHasChanged($index)" class="{{singleSlide ? 'noslider' : ''}}">
+
+      <ion-slide class="habit-slide" ng-if="!singleSlide"> 
+        <div class="box Health">
+          <div class="slide-image"></div>
+          <h1>Health</h1>
+          <p>Getting sufficient sleep, exercise, and limiting caffeine and alcohol can help manage anxiety and improve mood.<br><br>
+
+		      Use HEALTH to set goals and track your progress. Don&#8217;t worry about changing overnight and take it one step at a time.</p>
+        </div>
+      </ion-slide>
+
+      <ion-slide class="habit-slide" ng-if="showSlide('Sleep')"> 
+        <div class="box box-Sleep">
+          <div class="slide-image"></div>
+          <h1>Sleep</h1>
+          <p>Studies have shown that sleep is a critical factor in managing mood. Lack of sleep can cause increases in stress hormones and make it harder to manage anxiety.<br><br>
+          Try to get at least 7 hours of sleep a night. You&#8217;ll be better equipped to manage daily stresses.</p>
+
+          <button class="button-start" ng-click="confirm()" ng-show="intro && isLast('Sleep', ['Exercise', 'Eating', 'Water', 'Caffeine', 'Alcohol', 'Outdoors'])">OK, GOT IT.</button>
+        </div>
+      </ion-slide>
+
+      <ion-slide class="habit-slide" ng-if="showSlide('Exercise')"> 
+        <div class="box box-Exercise">
+          <div class="slide-image"></div>
+          <h1>Exercise</h1>
+          <p>Countless studies have shown that regular exercise can be effective in improving mood and managing stress. Try to exercise at least three times per week and see how you feel.</p>
+
+          <button class="button-start" ng-click="confirm()" ng-show="intro && isLast('Exercise', ['Eating', 'Water', 'Caffeine', 'Alcohol', 'Outdoors'])">OK, GOT IT.</button>
+        </div>
+      </ion-slide>
+
+      <ion-slide class="habit-slide" ng-if="showSlide('Eating')"> 
+        <div class="box box-Eating">
+          <div class="slide-image"></div>
+          <h1>Eating</h1>
+          <p>Eating a healthy diet with regular meals and snacks can help manage your mood and responses to stress. Try to eat a balanced diet with fruits, vegetables, whole grains and lean meats while avoiding foods which spike your blood sugar and lead to a crash later.</p>
+
+      <button class="button-start" ng-click="confirm()" ng-show="intro && isLast('Eating', ['Water', 'Caffeine', 'Alcohol', 'Outdoors'])">OK, GOT IT.</button>
+        </div>
+      </ion-slide>
+
+      <ion-slide class="habit-slide" ng-if="showSlide('Water')"> 
+        <div class="box box-Water">
+          <div class="slide-image"></div>
+          <h1>Water</h1>
+          <p>It may seem obvious, but drinking plenty of water is vital in helping your body maintain balance. When dehydrated, the body can malfunction resulting in the same physical symptoms as anxiety (increased heart rate, feeling faint, headaches, etc.)<br><br>
+          Try to drink at least 6 glasses of water a day. Your body will thank you.</p>
+          <button class="button-start" ng-click="confirm()" ng-show="intro && isLast('Water', ['Caffeine', 'Alcohol', 'Outdoors'])">OK, GOT IT.</button>
+        </div>
+      </ion-slide>
+
+      <ion-slide class="habit-slide" ng-if="showSlide('Caffeine')"> 
+        <div class="box box-Caffeine">
+          <div class="slide-image"></div>
+          <h1>Caffeine</h1>
+          <p>Caffeine is a stimulant and for many people with anxiety, it makes their anxiety worse. Studies have shown that high levels of caffeine can even trigger panic attacks.<br><br>
+          Aim for 2 or fewer servings of caffeine per day and see if you feel better. If you are cutting down from a large amount of caffeine, you may want to gradually decrease your intake to avoid withdrawal symptoms.</p>
+
+          <button class="button-start" ng-click="confirm()" ng-show="intro && isLast('Caffeine', ['Alcohol', 'Outdoors'])">OK, GOT IT.</button>
+        </div>
+      </ion-slide>
+
+      <ion-slide class="habit-slide" ng-if="showSlide('Alcohol')"> 
+        <div class="box box-Alcohol">
+          <div class="slide-image"></div>
+          <h1>Alcohol</h1>
+          <p>For people with anxiety, alcohol is risky business. Though it reduces anxiety in the short term, it often leads to increased anxiety in the long run. The immediate side effects of a night of heavy drinking (dehydration, headache, altered neurotransmitters) can also ramp up anxiety the following day.</p>
+
+          <button class="button-start" ng-click="confirm()" ng-show="intro && isLast('Alcohol', ['Outdoors'])">OK, GOT IT.</button>
+        </div>
+      </ion-slide>
+
+      <ion-slide class="habit-slide" ng-if="showSlide('Outdoors')"> 
+        <div class="box box-Outdoors">
+          <div class="slide-image"></div>
+          <h1>Outdoors</h1>
+          <p>Many people find that getting outside and taking a moment to reflect reduces their anxiety and helps ground them. Exposure to natural light may also help regulate your sleep-wake cycle. Give it a try and see if spending some time outside helps your mood and anxiety.</p>
+
+          <button class="button-start" ng-click="confirm()" ng-show="intro && isLast('Outdoors', [])">OK, GOT IT.</button>
+        </div>
+      </ion-slide>
+
+    </ion-slide-box>
+  </ion-content>
+</ion-view>
